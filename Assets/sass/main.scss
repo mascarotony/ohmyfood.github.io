@@ -1,0 +1,45 @@
+/*Palette de couleur*/
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$gray-color: #F5F5F5;
+$dark-gray: darken($gray-color, 75%);
+$white: #FFF;
+
+/*Mixins*/
+@mixin gray-background($scale : 0%) 
+{
+    background-color: darken($gray-color, $scale)
+}
+
+/*Police d'écriture*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+
+/*Base*/
+body {
+    font-family: 'roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/**Layout**/
+/*header*/
+.header_home {
+    display: flex;
+    height: 70px;
+    img {
+      margin: auto;
+      width: 200px;
+    }
+  }
+
+/**Pages**/
+/*Home*/
+.location {
+    display: flex;
+    justify-content: center;
+    @include gray-background(4%);
+    color: $dark-gray;
+    height: 50px;
+}

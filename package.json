@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "projet n°3 OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./Assets/sass/main.scss:./Assets/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mascarotony/OhMyFood.git"
+  },
+  "author": "Mascaro Tony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mascarotony/OhMyFood/issues"
+  },
+  "homepage": "https://github.com/mascarotony/OhMyFood#readme",
+  "dependencies": {
+    "sass": "^1.54.9"
+  }
+}
