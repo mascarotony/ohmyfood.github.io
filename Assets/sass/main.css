@@ -1,5 +1,6 @@
 @charset "UTF-8";
 /**Utils**/
+/*BreakPoints*/
 /*Palette de couleur*/
 /*Mixins*/
 /*Police d'écriture*/
@@ -30,6 +31,11 @@ a {
   margin: auto;
   width: 200px;
 }
+@media screen and (min-width: 768px) {
+  .header_home img {
+    width: 245px;
+  }
+}
 
 /**Components**/
 .btn {
@@ -47,11 +53,22 @@ a {
   box-shadow: 0 5px 10px #c2c2c2;
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .btn {
+    height: 70px;
+    font-size: 1.5rem;
+  }
+}
 .btn a {
   color: #FFF;
 }
 .btn--explore {
   padding: 15px 20px;
+}
+@media screen and (min-width: 768px) {
+  .btn--explore {
+    padding: 20px 30px;
+  }
 }
 .btn:hover {
   background: linear-gradient(170deg, #fface8, #ae80e5);
@@ -69,9 +86,19 @@ a {
 .location i {
   margin-right: 15px;
 }
+@media screen and (min-width: 768px) {
+  .location i {
+    font-size: 1.2rem;
+  }
+}
 .location p {
   margin: auto;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .location p {
+    font-size: 1.2rem;
+  }
 }
 
 .presentation {
@@ -83,10 +110,20 @@ a {
   margin-bottom: 15px;
   font-size: 1.8rem;
 }
+@media screen and (min-width: 768px) {
+  .presentation h2 {
+    font-size: 2.2rem;
+  }
+}
 .presentation p {
   margin-bottom: 30px;
   font-weight: 300;
   font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .presentation p {
+    font-size: 1.5rem;
+  }
 }
 
 .functioning {
@@ -96,9 +133,26 @@ a {
   margin-bottom: 30px;
   font-size: 1.6rem;
 }
+@media screen and (min-width: 768px) {
+  .functioning h2 {
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+}
 
 .functioning_list {
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .functioning_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    row-gap: 10px;
+  }
 }
 
 .step {
@@ -106,6 +160,11 @@ a {
   width: 100%;
   align-items: center;
   margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .step {
+    width: 350px;
+  }
 }
 .step__number {
   background-color: #9356DC;
@@ -115,6 +174,13 @@ a {
   border-radius: 1rem;
   z-index: 2;
   font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .step__number {
+    height: 30px;
+    width: 30px;
+    font-size: 1.1rem;
+  }
 }
 .step__number span {
   margin: auto;
@@ -131,11 +197,22 @@ a {
   font-weight: 600;
   box-shadow: 0 5px 10px #c2c2c2;
 }
+@media screen and (min-width: 768px) {
+  .step__text {
+    font-size: 1.2rem;
+  }
+}
 .step__text i {
   width: 20px;
   color: dimgray;
   margin: 0 25px 0 30px;
   font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .step__text i {
+    width: 30px;
+    font-size: 1.5rem;
+  }
 }
 .step__text:hover {
   background-color: #efe6fa;
