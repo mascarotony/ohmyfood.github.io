@@ -27,6 +27,11 @@ a {
   height: 70px;
   padding-top: 10px;
 }
+@media screen and (min-width: 1024px) {
+  .header_home {
+    height: 100px;
+  }
+}
 .header_home img {
   margin: auto;
   width: 200px;
@@ -34,6 +39,11 @@ a {
 @media screen and (min-width: 768px) {
   .header_home img {
     width: 245px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header_home img {
+    width: 280px;
   }
 }
 
@@ -72,7 +82,7 @@ a {
 }
 .btn:hover {
   background: linear-gradient(170deg, #fface8, #ae80e5);
-  box-shadow: 0 5px 10px darkgray;
+  box-shadow: 0 5px 10px #828282;
 }
 
 /**Pages**/
@@ -83,12 +93,22 @@ a {
   color: #363636;
   box-shadow: inset 0 5px 5px -2px #cfcfcf;
 }
+@media screen and (min-width: 1024px) {
+  .location {
+    height: 80px;
+  }
+}
 .location i {
   margin-right: 15px;
 }
 @media screen and (min-width: 768px) {
   .location i {
     font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .location i {
+    font-size: 1.5rem;
   }
 }
 .location p {
@@ -98,6 +118,11 @@ a {
 @media screen and (min-width: 768px) {
   .location p {
     font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .location p {
+    font-size: 1.4rem;
   }
 }
 
@@ -216,6 +241,7 @@ a {
 }
 .step__text:hover {
   background-color: #efe6fa;
+  box-shadow: 0 5px 10px #9c9c9c;
 }
 .step__text:hover i {
   color: #9356DC;
