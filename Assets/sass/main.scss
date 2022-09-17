@@ -294,3 +294,86 @@ a
     }
   }
 }
+
+.restaurant
+{
+  padding: 40px 20px;
+  @include gray-background;
+
+  h2
+  {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+  }
+}
+
+.restaurant_card
+{
+  box-sizing: border-box;
+  height: 250px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 20px;
+  @include shadow-box;
+
+  &__image
+  {
+    height: 70%;
+    position: relative;
+
+    img
+    {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .new
+    {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      background-color: $tertiary-color;
+      color: darken($tertiary-color, 30%);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: .9rem;
+    }
+  }
+
+  &__description
+  {
+    height: 30%;
+    background-color: $white;
+    
+    .description_text
+    {
+      flex-direction: column;
+      flex: 1;
+      padding-left: 15px;
+      padding-top: 10px;
+      text-align: left;
+      font-size: 1.2rem;
+
+      .restaurant_name
+      {
+        margin: 0;
+        font-weight: 700;
+        margin-bottom: 5px;
+        & + p
+        {
+          margin: 0;
+          font-weight: 400;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .like_heart
+    {
+      width: 75px;
+    }
+  }
+}
