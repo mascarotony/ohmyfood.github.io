@@ -1,6 +1,6 @@
 /**Utils**/
 /*BreakPoints*/
-$breakpoints-map: (tablet: 768px, desktop: 1024px);
+$breakpoints-map: (tablet: 768px, desktop: 1060px);
 
 /*Palette de couleur*/
 $primary-color: #9356DC;
@@ -72,7 +72,7 @@ a
     }
     @include breakpoints(desktop)
     {
-      width: 280px
+      width: 300px
     }
   }
 }
@@ -175,6 +175,10 @@ a
     {
       font-size: 2.2rem;
     }
+    @include breakpoints(desktop)
+    {
+      font-size: 2.4rem;
+    }
   }
 
   p
@@ -202,6 +206,10 @@ a
       margin-bottom: 40px;
       font-size: 2.2rem;
       text-align: center;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 2.4rem;
     }
   }
 }
@@ -305,6 +313,28 @@ a
     margin-top: 10px;
     margin-bottom: 20px;
     font-size: 1.6rem;
+    @include breakpoints(tablet)
+    {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.restaurant_list
+{
+  @include breakpoints(tablet)
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 50px;
+    row-gap: 30px;
   }
 }
 
@@ -316,11 +346,24 @@ a
   overflow: hidden;
   margin-bottom: 20px;
   @include shadow-box;
+  @include breakpoints(tablet)
+  {
+    width: 380px;
+  }
+  @include breakpoints(desktop)
+  {
+    width: 550px;
+    height: 400px;
+  }
 
   &__image
   {
     height: 70%;
     position: relative;
+    @include breakpoints(desktop)
+    {
+      height: 75%;
+    }
 
     img
     {
@@ -340,6 +383,14 @@ a
       border-radius: 5px;
       font-weight: 500;
       font-size: .9rem;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.25rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -347,6 +398,10 @@ a
   {
     height: 30%;
     background-color: $white;
+    @include breakpoints(desktop)
+    {
+      height: 25%;
+    }
     
     .description_text
     {
@@ -356,6 +411,15 @@ a
       padding-top: 10px;
       text-align: left;
       font-size: 1.2rem;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.5rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 1.7rem;
+        padding-top: 15px;
+      }
 
       .restaurant_name
       {
@@ -367,6 +431,14 @@ a
           margin: 0;
           font-weight: 400;
           font-size: 1rem;
+          @include breakpoints(tablet)
+          {
+            font-size: 1.2rem;
+          }
+          @include breakpoints(desktop)
+          {
+            font-size: 1.4rem;
+          }
         }
       }
     }

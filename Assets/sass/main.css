@@ -27,7 +27,7 @@ a {
   height: 70px;
   padding-top: 10px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1060px) {
   .header_home {
     height: 100px;
   }
@@ -41,9 +41,9 @@ a {
     width: 245px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1060px) {
   .header_home img {
-    width: 280px;
+    width: 300px;
   }
 }
 
@@ -93,7 +93,7 @@ a {
   color: #363636;
   box-shadow: inset 0 5px 5px -2px #cfcfcf;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1060px) {
   .location {
     height: 80px;
   }
@@ -106,7 +106,7 @@ a {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1060px) {
   .location i {
     font-size: 1.5rem;
   }
@@ -120,7 +120,7 @@ a {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1060px) {
   .location p {
     font-size: 1.4rem;
   }
@@ -138,6 +138,11 @@ a {
 @media screen and (min-width: 768px) {
   .presentation h2 {
     font-size: 2.2rem;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .presentation h2 {
+    font-size: 2.4rem;
   }
 }
 .presentation p {
@@ -163,6 +168,11 @@ a {
     margin-bottom: 40px;
     font-size: 2.2rem;
     text-align: center;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .functioning h2 {
+    font-size: 2.4rem;
   }
 }
 
@@ -256,6 +266,29 @@ a {
   margin-bottom: 20px;
   font-size: 1.6rem;
 }
+@media screen and (min-width: 768px) {
+  .restaurant h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .restaurant h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .restaurant_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+    row-gap: 30px;
+  }
+}
 
 .restaurant_card {
   box-sizing: border-box;
@@ -265,9 +298,25 @@ a {
   margin-bottom: 20px;
   box-shadow: 0 5px 10px #c2c2c2;
 }
+@media screen and (min-width: 768px) {
+  .restaurant_card {
+    width: 380px;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card {
+    width: 550px;
+    height: 400px;
+  }
+}
 .restaurant_card__image {
   height: 70%;
   position: relative;
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__image {
+    height: 75%;
+  }
 }
 .restaurant_card__image img {
   height: 100%;
@@ -286,9 +335,24 @@ a {
   font-weight: 500;
   font-size: 0.9rem;
 }
+@media screen and (min-width: 768px) {
+  .restaurant_card__image .new {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__image .new {
+    font-size: 1.4rem;
+  }
+}
 .restaurant_card__description {
   height: 30%;
   background-color: #FFF;
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__description {
+    height: 25%;
+  }
 }
 .restaurant_card__description .description_text {
   flex-direction: column;
@@ -297,6 +361,17 @@ a {
   padding-top: 10px;
   text-align: left;
   font-size: 1.2rem;
+}
+@media screen and (min-width: 768px) {
+  .restaurant_card__description .description_text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__description .description_text {
+    font-size: 1.7rem;
+    padding-top: 15px;
+  }
 }
 .restaurant_card__description .description_text .restaurant_name {
   margin: 0;
@@ -307,6 +382,16 @@ a {
   margin: 0;
   font-weight: 400;
   font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .restaurant_card__description .description_text .restaurant_name + p {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__description .description_text .restaurant_name + p {
+    font-size: 1.4rem;
+  }
 }
 .restaurant_card__description .like_heart {
   width: 75px;
