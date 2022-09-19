@@ -8,3 +8,5 @@ Projet n°3 OpenClassrooms 14/09 - Création du Projet : Ajout du logo "header" 
 17/09 - Modification du projet : Ajout de la partie "restaurant" + mise en page "mobile only"
 
 18/09 - Modification du projet : Mise en page revue pour les breakpoints "tablet" et "desktop"
+
+19/09 - Modification du projet : Animation pour le bouton j'aime ajoutée + mise en page de cette animation "mobile", "tablet" et "desktop"

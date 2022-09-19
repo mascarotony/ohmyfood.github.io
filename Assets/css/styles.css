@@ -298,7 +298,7 @@ a {
 }
 @media screen and (min-width: 768px) {
   .restaurant_card {
-    width: 380px;
+    width: 340px;
   }
 }
 @media screen and (min-width: 1060px) {
@@ -392,6 +392,47 @@ a {
 }
 .restaurant_card__description .like_heart {
   width: 75px;
+}
+.restaurant_card__description .like_heart .regular_heart {
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 150ms 50ms ease;
+}
+@media screen and (min-width: 768px) {
+  .restaurant_card__description .like_heart .regular_heart {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__description .like_heart .regular_heart {
+    font-size: 2.8rem;
+  }
+}
+.restaurant_card__description .like_heart .regular_heart:hover {
+  color: transparent;
+}
+.restaurant_card__description .like_heart .regular_heart:hover > .full_heart {
+  transform: scale(1);
+}
+.restaurant_card__description .like_heart .full_heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  transition: transform 150ms 100ms ease-in-out;
+}
+@media screen and (min-width: 1060px) {
+  .restaurant_card__description .like_heart {
+    width: 100px;
+  }
+}
+.restaurant_card__description .like_heart .regular_heart {
+  margin: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */

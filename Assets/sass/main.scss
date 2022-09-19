@@ -29,6 +29,49 @@ $white: #FFF;
   background-color: darken($gray-color, $scale)
 }
 
+@mixin heart-transition{
+  .regular_heart
+  {
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 150ms 50ms ease;
+    
+    @include breakpoints(tablet)
+    {
+      font-size: 2.4rem;
+    }
+
+    @include breakpoints(desktop)
+    {
+      font-size: 2.8rem;
+    }
+
+    &:hover
+    {
+      color: transparent;
+    }
+    
+    &:hover > .full_heart
+    {
+      transform: scale(1);
+    }
+  }
+
+  .full_heart
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(170deg, $secondary-color, $primary-color);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    transform: scale(0);
+    transition: transform 150ms 100ms ease-in-out;
+  }
+}
+
 /*Police d'écriture*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
 
@@ -348,7 +391,7 @@ a
   @include shadow-box;
   @include breakpoints(tablet)
   {
-    width: 380px;
+    width: 340px;
   }
   @include breakpoints(desktop)
   {
@@ -446,6 +489,16 @@ a
     .like_heart
     {
       width: 75px;
+      @include heart-transition;
+      @include breakpoints(desktop)
+      {
+        width: 100px;
+      }
+
+      .regular_heart
+      {
+        margin: auto;
+      }
     }
   }
 }
