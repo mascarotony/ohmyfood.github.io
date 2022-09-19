@@ -76,7 +76,7 @@ $white: #FFF;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
 
 /**Base**/
-body
+body, ul
 {
   font-family: 'roboto', sans-serif;
   margin: 0;
@@ -87,6 +87,27 @@ a
 {
   text-decoration: none;
   color: #000;
+}
+
+li
+{
+  list-style: none;
+  
+  @include breakpoints(tablet)
+  {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  @include breakpoints(desktop)
+  {
+    font-size: 1.5rem;
+  }
+}
+
+h1, h2, h3
+{
+  margin: 0;
 }
 
 .flex
@@ -116,6 +137,68 @@ a
     @include breakpoints(desktop)
     {
       width: 300px
+    }
+  }
+}
+
+/*footer*/
+footer
+{
+  background-color: $dark-gray;
+  color: $white;
+  padding: 20px 20px 30px;
+  
+  h3
+  {
+    font-family: 'shrikhand', cursive;
+    font-weight: 400;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    
+    @include breakpoints(tablet)
+    {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    @include breakpoints(desktop)
+    {
+      font-size: 2.2rem;
+    }
+  }
+
+  a
+  {
+    color: $white;
+    line-height: 1.5rem;
+    
+    @include breakpoints(tablet)
+    {
+      line-height: 1.8rem;
+    }
+
+    @include breakpoints(desktop)
+    {
+      line-height: 2.2rem;
+    }
+
+    i
+    {
+      font-size: 0.8rem;
+      width: 10px;
+      margin-right: 10px;
+
+      @include breakpoints(tablet)
+      {
+        font-size: 1.2rem;
+        margin-right: 20px;
+      }
+
+      @include breakpoints(desktop)
+      {
+        font-size: 1.5rem;
+        margin-right: 30px;
+      }
     }
   }
 }
