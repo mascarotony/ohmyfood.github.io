@@ -2,9 +2,21 @@
 /**Utils**/
 /*BreakPoints*/
 /*Palette de couleur*/
+/*background*/
 /*Mixins*/
-/*Police d'écriture*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
+@keyframes zoom-card {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.05, 1.05);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+/*Police d'écriture*/
 /**Base**/
 body, ul {
   font-family: "roboto", sans-serif;
@@ -26,7 +38,7 @@ li {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   li {
     font-size: 1.5rem;
   }
@@ -46,7 +58,7 @@ h1, h2, h3 {
   height: 70px;
   padding-top: 10px;
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .header_home {
     height: 100px;
   }
@@ -60,10 +72,32 @@ h1, h2, h3 {
     width: 245px;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .header_home img {
     width: 300px;
   }
+}
+
+.header_restaurant {
+  height: 70px;
+  padding-right: 70px;
+  align-items: center;
+}
+.header_restaurant a {
+  width: 70px;
+  height: 100%;
+  color: #363636;
+}
+.header_restaurant a i {
+  margin: auto;
+  font-size: 1.5rem;
+}
+.header_restaurant h1 {
+  flex: 1;
+  font-family: "shrikhand", cursive;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 /*footer*/
@@ -84,7 +118,7 @@ footer h3 {
     text-align: center;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   footer h3 {
     font-size: 2.2rem;
   }
@@ -98,10 +132,13 @@ footer a {
     line-height: 1.8rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   footer a {
     line-height: 2.2rem;
   }
+}
+footer a:hover {
+  text-shadow: #9356DC 1px 1px 3px;
 }
 footer a i {
   font-size: 0.8rem;
@@ -114,7 +151,7 @@ footer a i {
     margin-right: 20px;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   footer a i {
     font-size: 1.5rem;
     margin-right: 30px;
@@ -159,6 +196,46 @@ footer a i {
   box-shadow: 0 5px 10px #828282;
 }
 
+.dish {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  margin-top: 15px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #c2c2c2;
+  padding: 0;
+  position: relative;
+}
+.dish__text {
+  width: 80%;
+  padding: 12px 0 12px 10px;
+  justify-content: space-between;
+}
+.dish__text .dish-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+.dish__text p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+}
+.dish__price {
+  align-self: flex-end;
+  color: #363636;
+  font-weight: 600;
+  position: absolute;
+  right: 20px;
+  bottom: 11px;
+}
+.dish:hover {
+  cursor: pointer;
+}
+
 /**Pages**/
 /*Home*/
 .location {
@@ -167,7 +244,7 @@ footer a i {
   color: #363636;
   box-shadow: inset 0 5px 5px -2px #cfcfcf;
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .location {
     height: 80px;
   }
@@ -180,7 +257,7 @@ footer a i {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .location i {
     font-size: 1.5rem;
   }
@@ -194,14 +271,14 @@ footer a i {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .location p {
     font-size: 1.4rem;
   }
 }
 
 .presentation {
-  padding: 20px 20px 60px;
+  padding: 30px 20px 50px;
   background-color: whitesmoke;
   text-align: center;
 }
@@ -214,7 +291,7 @@ footer a i {
     font-size: 2.2rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .presentation h2 {
     font-size: 2.4rem;
   }
@@ -231,7 +308,7 @@ footer a i {
 }
 
 .functioning {
-  padding: 20px 20px 40px;
+  padding: 40px 20px;
 }
 .functioning h2 {
   margin-bottom: 30px;
@@ -244,7 +321,7 @@ footer a i {
     text-align: center;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .functioning h2 {
     font-size: 2.4rem;
   }
@@ -343,10 +420,10 @@ footer a i {
   .restaurant h2 {
     font-size: 2.2rem;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant h2 {
     font-size: 2.4rem;
   }
@@ -375,17 +452,20 @@ footer a i {
     width: 340px;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card {
     width: 550px;
     height: 400px;
   }
 }
+.restaurant_card:hover {
+  animation: zoom-card 500ms ease;
+}
 .restaurant_card__image {
   height: 70%;
   position: relative;
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__image {
     height: 75%;
   }
@@ -411,7 +491,7 @@ footer a i {
     font-size: 1.25rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__image .new {
     font-size: 1.4rem;
   }
@@ -420,7 +500,7 @@ footer a i {
   height: 30%;
   background-color: #FFF;
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__description {
     height: 25%;
   }
@@ -438,7 +518,7 @@ footer a i {
     font-size: 1.5rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__description .description_text {
     font-size: 1.7rem;
     padding-top: 15px;
@@ -459,7 +539,7 @@ footer a i {
     font-size: 1.2rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__description .description_text .restaurant_name + p {
     font-size: 1.4rem;
   }
@@ -471,14 +551,14 @@ footer a i {
   font-size: 1.8rem;
   cursor: pointer;
   position: relative;
-  transition: color 150ms 50ms ease;
+  transition: color 300ms 50ms ease;
 }
 @media screen and (min-width: 768px) {
   .restaurant_card__description .like_heart .regular_heart {
     font-size: 2.4rem;
   }
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__description .like_heart .regular_heart {
     font-size: 2.8rem;
   }
@@ -498,15 +578,98 @@ footer a i {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(0);
-  transition: transform 150ms 100ms ease-in-out;
+  transition: transform 150ms 50ms ease-in-out;
 }
-@media screen and (min-width: 1060px) {
+@media screen and (min-width: 1024px) {
   .restaurant_card__description .like_heart {
     width: 100px;
   }
 }
 .restaurant_card__description .like_heart .regular_heart {
   margin: auto;
+}
+
+/*restaurant*/
+.main {
+  background-color: #F5F5F5;
+}
+
+.restaurant_picture {
+  height: 250px;
+}
+.restaurant_picture.la_palette_du_gout {
+  background: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center/cover;
+}
+
+.restaurants {
+  border-radius: 2rem 2rem 0 0;
+  padding: 15px 15px 35px;
+  transform: translateY(-30px);
+  background-color: whitesmoke;
+}
+.restaurants_name {
+  justify-content: space-between;
+  align-items: baseline;
+  margin-right: 25px;
+}
+.restaurants_name .regular_heart {
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 300ms 50ms ease;
+}
+@media screen and (min-width: 768px) {
+  .restaurants_name .regular_heart {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .restaurants_name .regular_heart {
+    font-size: 2.8rem;
+  }
+}
+.restaurants_name .regular_heart:hover {
+  color: transparent;
+}
+.restaurants_name .regular_heart:hover > .full_heart {
+  transform: scale(1);
+}
+.restaurants_name .full_heart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(170deg, #FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  transition: transform 150ms 50ms ease-in-out;
+}
+.restaurants h2 {
+  font-family: "shrikhand", cursive;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.restaurants h3 {
+  margin: 20px 0px 0px 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.restaurants h3::after {
+  content: "";
+  display: block;
+  height: 3.5px;
+  width: 40px;
+  background-color: #99E2D0;
+  margin-top: 5px;
+}
+.restaurants .btn {
+  display: block;
+  margin: auto;
+  margin-top: 60px;
 }
 
 /*# sourceMappingURL=styles.css.map */

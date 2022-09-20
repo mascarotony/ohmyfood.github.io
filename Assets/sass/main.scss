@@ -1,6 +1,6 @@
 /**Utils**/
 /*BreakPoints*/
-$breakpoints-map: (tablet: 768px, desktop: 1060px);
+$breakpoints-map: (tablet: 768px, desktop: 1024px);
 
 /*Palette de couleur*/
 $primary-color: #9356DC;
@@ -9,6 +9,12 @@ $tertiary-color: #99E2D0;
 $gray-color: #F5F5F5;
 $dark-gray: darken($gray-color, 75%);
 $white: #FFF;
+
+/*background*/
+$images-restpic:
+(
+  la_palette_du_gout: 'jay-wennington-N_Y88TWmGwA-unsplash.jpg',
+);
 
 /*Mixins*/
 @mixin breakpoints($min-device)
@@ -29,29 +35,26 @@ $white: #FFF;
   background-color: darken($gray-color, $scale)
 }
 
-@mixin heart-transition{
+@mixin heart-transition
+{
   .regular_heart
   {
     font-size: 1.8rem;
     cursor: pointer;
     position: relative;
-    transition: color 150ms 50ms ease;
-    
+    transition: color 300ms 50ms ease;
     @include breakpoints(tablet)
     {
       font-size: 2.4rem;
     }
-
     @include breakpoints(desktop)
     {
       font-size: 2.8rem;
     }
-
     &:hover
     {
       color: transparent;
     }
-    
     &:hover > .full_heart
     {
       transform: scale(1);
@@ -68,7 +71,28 @@ $white: #FFF;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
     transform: scale(0);
-    transition: transform 150ms 100ms ease-in-out;
+    transition: transform 150ms 50ms ease-in-out;
+  }
+}
+
+@mixin restaurant_background-pic($restpic)
+{
+  background: url('../images/restaurants/#{map-get($images-restpic, $restpic)}') center/cover;
+}
+
+@keyframes zoom-card
+{
+  0%
+  {
+    transform: scale(1, 1)
+  }
+  50%
+  {
+    transform: scale(1.05, 1.05)
+  }
+  100%
+  {
+    transform: scale(1, 1)
   }
 }
 
@@ -92,13 +116,11 @@ a
 li
 {
   list-style: none;
-  
   @include breakpoints(tablet)
   {
     text-align: center;
     font-size: 1.2rem;
   }
-
   @include breakpoints(desktop)
   {
     font-size: 1.5rem;
@@ -141,26 +163,53 @@ h1, h2, h3
   }
 }
 
+.header_restaurant
+{
+  height: 70px;
+  padding-right: 70px;
+  align-items: center;
+
+  a
+  {
+    width: 70px;
+    height: 100%;
+    color: $dark-gray;
+
+    i
+    {
+      margin: auto;
+      font-size: 1.5rem;
+    }
+  }
+
+  h1
+  {
+    flex: 1;
+    font-family: 'shrikhand', cursive;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+}
+
 /*footer*/
 footer
 {
   background-color: $dark-gray;
   color: $white;
   padding: 20px 20px 30px;
-  
+
   h3
   {
     font-family: 'shrikhand', cursive;
     font-weight: 400;
     margin-bottom: 12px;
     font-size: 1.3rem;
-    
     @include breakpoints(tablet)
     {
       font-size: 1.8rem;
       text-align: center;
     }
-
     @include breakpoints(desktop)
     {
       font-size: 2.2rem;
@@ -171,15 +220,18 @@ footer
   {
     color: $white;
     line-height: 1.5rem;
-    
     @include breakpoints(tablet)
     {
       line-height: 1.8rem;
     }
-
     @include breakpoints(desktop)
     {
       line-height: 2.2rem;
+    }
+
+    &:hover
+    {
+      text-shadow: $primary-color 1px 1px 3px;
     }
 
     i
@@ -187,13 +239,11 @@ footer
       font-size: 0.8rem;
       width: 10px;
       margin-right: 10px;
-
       @include breakpoints(tablet)
       {
         font-size: 1.2rem;
         margin-right: 20px;
       }
-
       @include breakpoints(desktop)
       {
         font-size: 1.5rem;
@@ -246,6 +296,56 @@ footer
   }
 }
 
+.dish
+{
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  margin-top: 15px;
+  border-radius: 1rem;
+  overflow: hidden;
+  @include shadow-box;
+  padding: 0;
+  position: relative;
+
+  &__text
+  {
+    width: 80%;
+    padding: 12px 0 12px 10px;
+    justify-content: space-between;
+
+    .dish-name
+    {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      white-space: nowrap;
+    }
+
+    p
+    {
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-overflow: ellipsis;
+    }
+  }
+  &__price
+  {
+    align-self: flex-end;
+    color: $dark-gray;
+    font-weight: 600;
+    position: absolute;
+    right: 20px;
+    bottom: 11px;
+  }
+
+  &:hover
+  {
+    cursor: pointer;
+  }
+}
+
 /**Pages**/
 /*Home*/
 .location
@@ -289,7 +389,7 @@ footer
 
 .presentation
 {
-  padding: 20px 20px 60px;
+  padding: 30px 20px 50px;
   @include gray-background;
   text-align: center;
 
@@ -321,7 +421,7 @@ footer
 
 .functioning
 {
-  padding: 20px 20px 40px;
+  padding: 40px 20px;
 
   h2
   {
@@ -443,7 +543,7 @@ footer
     {
       font-size: 2.2rem;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
     @include breakpoints(desktop)
     {
@@ -480,6 +580,11 @@ footer
   {
     width: 550px;
     height: 400px;
+  }
+
+  &:hover
+  {
+    animation: zoom-card 500ms ease;
   }
 
   &__image
@@ -552,6 +657,7 @@ footer
         margin: 0;
         font-weight: 700;
         margin-bottom: 5px;
+
         & + p
         {
           margin: 0;
@@ -583,5 +689,68 @@ footer
         margin: auto;
       }
     }
+  }
+}
+
+/*restaurant*/
+.main
+{
+  background-color: $gray-color;
+}
+
+.restaurant_picture
+{
+  height: 250px;
+  &.la_palette_du_gout
+  {
+    @include restaurant_background-pic(la_palette_du_gout)
+  }
+}
+
+.restaurants
+{
+  border-radius: 2rem 2rem 0 0;
+  padding: 15px 15px 35px;
+  transform: translateY(-30px);
+  @include gray-background;
+  &_name
+  {
+    justify-content: space-between;
+    align-items: baseline;
+    @include heart-transition;
+    margin-right: 25px;
+  }
+
+  h2
+  {
+    font-family: 'shrikhand', cursive;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+
+  h3
+  {
+    margin: 20px 0px 0px 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    &::after
+    {
+      content: "";
+      display: block;
+      height: 3.5px;
+      width: 40px;
+      background-color: $tertiary-color;
+      margin-top: 5px;
+    }
+  }
+
+  .btn
+  {
+    display: block;
+    margin: auto;
+    margin-top: 60px;
   }
 }
