@@ -14,6 +14,9 @@ $white: #FFF;
 $images-restpic:
 (
   la_palette_du_gout: 'jay-wennington-N_Y88TWmGwA-unsplash.jpg',
+  la_note_enchantee: 'stil-u2Lp8tXIcjw-unsplash.jpg',
+  a_la_francaise: 'toa-heftiba-DQKerTsQwi0-unsplash.jpg',
+  le_delice_des_sens: 'louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg'
 );
 
 /*Mixins*/
@@ -168,17 +171,38 @@ h1, h2, h3
   height: 70px;
   padding-right: 70px;
   align-items: center;
+  @include breakpoints(desktop)
+  {
+    height: 100px;
+    padding-right: 100px;
+  }
 
   a
   {
     width: 70px;
     height: 100%;
     color: $dark-gray;
+    @include breakpoints(desktop)
+    {
+      width: 100px;
+    }
 
     i
     {
       margin: auto;
       font-size: 1.5rem;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.9rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 2.5rem;
+        &:hover
+        {
+          text-shadow: $secondary-color 1px 1px 4px;
+        }
+      }
     }
   }
 
@@ -189,6 +213,14 @@ h1, h2, h3
     text-align: center;
     font-weight: 500;
     font-size: 1.8rem;
+    @include breakpoints(tablet)
+    {
+      font-size: 2.2rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -304,9 +336,19 @@ footer
   margin-top: 15px;
   border-radius: 1rem;
   overflow: hidden;
-  @include shadow-box;
   padding: 0;
   position: relative;
+  @include shadow-box;
+  @include breakpoints(tablet)
+  {
+    width: 80%;
+    margin: 20px 10% 0px 10%;
+  }
+  @include breakpoints(desktop)
+  {
+    width: 92%;
+    margin: 20px 4% 0px 4%;
+  }
 
   &__text
   {
@@ -320,6 +362,14 @@ footer
       font-size: 1.2rem;
       margin-bottom: 5px;
       white-space: nowrap;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.4rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 1.6rem;
+      }
     }
 
     p
@@ -328,8 +378,17 @@ footer
       font-weight: 400;
       font-size: 0.9rem;
       text-overflow: ellipsis;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.1rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 1.3rem;
+      }
     }
   }
+
   &__price
   {
     align-self: flex-end;
@@ -338,6 +397,14 @@ footer
     position: absolute;
     right: 20px;
     bottom: 11px;
+    @include breakpoints(tablet)
+    {
+      font-size: 1.2rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 1.4rem;
+    }
   }
 
   &:hover
@@ -705,6 +772,26 @@ footer
   {
     @include restaurant_background-pic(la_palette_du_gout)
   }
+  &.la_note_enchantee
+  {
+    @include restaurant_background-pic(la_note_enchantee)
+  }
+  &.a_la_francaise
+  {
+    @include restaurant_background-pic(a_la_francaise)
+  }
+  &.le_delice_des_sens
+  {
+    @include restaurant_background-pic(le_delice_des_sens)
+  }
+  @include breakpoints(tablet)
+  {
+    height: 350px;
+  }
+  @include breakpoints(desktop)
+  {
+    height: 450px;
+  }
 }
 
 .restaurants
@@ -713,12 +800,66 @@ footer
   padding: 15px 15px 35px;
   transform: translateY(-30px);
   @include gray-background;
+  @include breakpoints(tablet)
+  {
+    transform: translateY(-55px);
+    width: 80%;
+    margin: auto;
+    @include shadow-box;
+    border-radius: 2rem 2rem;
+    padding-bottom: 60px;
+  }
+  @include breakpoints(desktop)
+  {
+    transform: translateY(-80px);
+    width: 95%;
+    padding-top: 25px;
+    padding-bottom: 85px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
   &_name
   {
     justify-content: space-between;
     align-items: baseline;
     @include heart-transition;
     margin-right: 25px;
+    @include breakpoints(tablet)
+    {
+      margin-left: 20px;
+    }
+  }
+
+  .menu-list
+  {
+    @include breakpoints(desktop)
+    {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      row-gap: 40px;
+      column-gap: 40px;
+    }
+  }
+
+  .rest-menu
+  {
+    margin-bottom: 45px;
+    @include breakpoints(desktop)
+    {
+      margin-bottom: 0px;
+      width: 45%;
+      border-radius: 2rem;
+      padding: 0px 0px 25px 0px;
+      &:hover
+      {
+        transform: scale(1.05);
+        box-shadow: darken($secondary-color, 20%) 2px 2px 4px;
+      }
+    }
   }
 
   h2
@@ -728,6 +869,15 @@ footer
     font-weight: 500;
     margin-left: 10px;
     margin-bottom: 10px;
+    @include breakpoints(tablet)
+    {
+      font-size: 2.2rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-weight: 400;
+      font-size: 2.4rem;
+    }
   }
 
   h3
@@ -736,6 +886,17 @@ footer
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 400;
+    @include breakpoints(tablet)
+    {
+      font-size: 1.4rem;
+      margin: 20px 0px 0px 0px;
+      text-align: center;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 1.8rem;
+    }
+
     &::after
     {
       content: "";
@@ -744,6 +905,13 @@ footer
       width: 40px;
       background-color: $tertiary-color;
       margin-top: 5px;
+      @include breakpoints(tablet)
+      {
+        height: 5px;
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+      }
     }
   }
 
@@ -752,5 +920,9 @@ footer
     display: block;
     margin: auto;
     margin-top: 60px;
+    @include breakpoints(desktop)
+    {
+      margin-top: 70px;
+    }
   }
 }
