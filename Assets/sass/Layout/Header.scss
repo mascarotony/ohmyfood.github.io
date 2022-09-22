@@ -1,0 +1,81 @@
+.header_home
+{
+  height: 70px;
+  padding-top: 10px;
+  @include breakpoints(desktop)
+  {
+    height: 100px;
+  }
+
+  img 
+  {
+    margin: auto;
+    width: 200px;
+    @include breakpoints(tablet)
+    {
+      width: 245px;
+    }
+    @include breakpoints(desktop)
+    {
+      width: 300px
+    }
+  }
+}
+
+.header_restaurant
+{
+  height: 70px;
+  padding-right: 70px;
+  align-items: center;
+  @include breakpoints(desktop)
+  {
+    height: 100px;
+    padding-right: 100px;
+  }
+
+  a
+  {
+    width: 70px;
+    height: 100%;
+    color: $dark-gray;
+    @include breakpoints(desktop)
+    {
+      width: 100px;
+    }
+
+    i
+    {
+      margin: auto;
+      font-size: 1.5rem;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.9rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 2.5rem;
+        &:hover
+        {
+          text-shadow: $secondary-color 1px 1px 4px;
+        }
+      }
+    }
+  }
+
+  h1
+  {
+    flex: 1;
+    font-family: 'shrikhand', cursive;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.8rem;
+    @include breakpoints(tablet)
+    {
+      font-size: 2.2rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 2.5rem;
+    }
+  }
+}

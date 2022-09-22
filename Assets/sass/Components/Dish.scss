@@ -1,0 +1,84 @@
+.dish
+{
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  margin-top: 15px;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  @include shadow-box;
+  @include breakpoints(tablet)
+  {
+    width: 80%;
+    margin: 20px 10% 0px 10%;
+  }
+  @include breakpoints(desktop)
+  {
+    width: 92%;
+    margin: 20px 4% 0px 4%;
+  }
+
+  &__text
+  {
+    width: 80%;
+    padding: 12px 0 12px 10px;
+    justify-content: space-between;
+
+    .dish-name
+    {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.4rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 1.6rem;
+      }
+    }
+
+    p
+    {
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-overflow: ellipsis;
+      @include breakpoints(tablet)
+      {
+        font-size: 1.1rem;
+      }
+      @include breakpoints(desktop)
+      {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &__price
+  {
+    align-self: flex-end;
+    color: $dark-gray;
+    font-weight: 600;
+    position: absolute;
+    right: 20px;
+    bottom: 11px;
+    @include breakpoints(tablet)
+    {
+      font-size: 1.2rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 1.4rem;
+    }
+  }
+
+  &:hover
+  {
+    cursor: pointer;
+  }
+}

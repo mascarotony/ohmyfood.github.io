@@ -1,0 +1,78 @@
+@mixin breakpoints($min-device)
+{
+  @media screen and (min-width: map-get($breakpoints-map, $min-device))
+  {
+    @content;
+  }
+}
+
+@mixin shadow-box($color: darken($gray-color, 20%)) 
+{
+  box-shadow: 0 5px 10px $color;
+}
+
+@mixin gray-background($scale: 0%) 
+{
+  background-color: darken($gray-color, $scale)
+}
+
+@mixin heart-transition
+{
+  .regular_heart
+  {
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 300ms 50ms ease;
+    @include breakpoints(tablet)
+    {
+      font-size: 2.4rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 2.8rem;
+    }
+    &:hover
+    {
+      color: transparent;
+    }
+    &:hover > .full_heart
+    {
+      transform: scale(1);
+    }
+  }
+
+  .full_heart
+  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(170deg, $secondary-color, $primary-color);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    transform: scale(0);
+    transition: transform 150ms 50ms ease-in-out;
+  }
+}
+
+@mixin restaurant_background-pic($restpic)
+{
+  background: url('../images/restaurants/#{map-get($images-restpic, $restpic)}') center/cover;
+}
+
+@keyframes zoom-card
+{
+  0%
+  {
+    transform: scale(1, 1)
+  }
+  50%
+  {
+    transform: scale(1.05, 1.05)
+  }
+  100%
+  {
+    transform: scale(1, 1)
+  }
+}

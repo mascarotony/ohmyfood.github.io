@@ -1,0 +1,166 @@
+.main
+{
+  background-color: $gray-color;
+}
+
+.restaurant_picture
+{
+  height: 250px;
+  &.la_palette_du_gout
+  {
+    @include restaurant_background-pic(la_palette_du_gout)
+  }
+  &.la_note_enchantee
+  {
+    @include restaurant_background-pic(la_note_enchantee)
+  }
+  &.a_la_francaise
+  {
+    @include restaurant_background-pic(a_la_francaise)
+  }
+  &.le_delice_des_sens
+  {
+    @include restaurant_background-pic(le_delice_des_sens)
+  }
+  @include breakpoints(tablet)
+  {
+    height: 350px;
+  }
+  @include breakpoints(desktop)
+  {
+    height: 450px;
+  }
+}
+
+.restaurants
+{
+  border-radius: 2rem 2rem 0 0;
+  padding: 15px 15px 35px;
+  transform: translateY(-30px);
+  @include gray-background;
+  @include breakpoints(tablet)
+  {
+    transform: translateY(-55px);
+    width: 80%;
+    margin: auto;
+    @include shadow-box;
+    border-radius: 2rem 2rem;
+    padding-bottom: 60px;
+  }
+  @include breakpoints(desktop)
+  {
+    transform: translateY(-80px);
+    width: 95%;
+    padding-top: 25px;
+    padding-bottom: 85px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  &_name
+  {
+    justify-content: space-between;
+    align-items: baseline;
+    @include heart-transition;
+    margin-right: 25px;
+    @include breakpoints(tablet)
+    {
+      margin-left: 20px;
+    }
+  }
+
+  .menu-list
+  {
+    @include breakpoints(desktop)
+    {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      row-gap: 40px;
+      column-gap: 40px;
+    }
+  }
+
+  .rest-menu
+  {
+    margin-bottom: 45px;
+    @include breakpoints(desktop)
+    {
+      margin-bottom: 0px;
+      width: 45%;
+      border-radius: 2rem;
+      padding: 0px 0px 25px 0px;
+      &:hover
+      {
+        transform: scale(1.05);
+        box-shadow: darken($secondary-color, 20%) 2px 2px 4px;
+      }
+    }
+  }
+
+  h2
+  {
+    font-family: 'shrikhand', cursive;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    @include breakpoints(tablet)
+    {
+      font-size: 2.2rem;
+    }
+    @include breakpoints(desktop)
+    {
+      font-weight: 400;
+      font-size: 2.4rem;
+    }
+  }
+
+  h3
+  {
+    margin: 20px 0px 0px 10px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    @include breakpoints(tablet)
+    {
+      font-size: 1.4rem;
+      margin: 20px 0px 0px 0px;
+      text-align: center;
+    }
+    @include breakpoints(desktop)
+    {
+      font-size: 1.8rem;
+    }
+
+    &::after
+    {
+      content: "";
+      display: block;
+      height: 3.5px;
+      width: 40px;
+      background-color: $tertiary-color;
+      margin-top: 5px;
+      @include breakpoints(tablet)
+      {
+        height: 5px;
+        width: 50%;
+        margin-right: 25%;
+        margin-left: 25%;
+      }
+    }
+  }
+
+  .btn
+  {
+    display: block;
+    margin: auto;
+    margin-top: 60px;
+    @include breakpoints(desktop)
+    {
+      margin-top: 70px;
+    }
+  }
+}
