@@ -7,7 +7,7 @@
     transform: scale(0);
     background: linear-gradient(170deg, $secondary-color, lighten($primary-color, 5%));
     opacity: 1;
-    animation: load-background 4s 100ms backwards;
+    animation: load-background 3000ms 100ms backwards;
 
     .wrapper
     {
@@ -139,7 +139,74 @@
             transform: scale(1);
             height: 100vh;
             width: 100vw;
-            opacity: 0.2;
+            opacity: .2;
+        }
+    }
+}
+
+/**Dish**/
+/*Dish Loader*/
+$menu-appear-delay: 350ms;
+$max-dish: 4;
+
+.dish
+{
+    opacity: 0;
+    animation: fadein 3000ms;
+
+    @keyframes fadein
+    {
+        from
+        {
+            transform: translateY(40px);
+            opacity: 0;
+        }
+        to
+        {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @for $i from 1 through ($max-dish)
+    {
+        &:nth-of-type(#{$i})
+        {
+            animation: fadein 800ms $menu-appear-delay*$i forwards;
+            @include breakpoints(desktop)
+            {  
+                animation-delay: 3000ms;
+                animation: fadein 800ms 500ms*$i forwards;
+            }
+        }
+    }
+}
+
+/*Dish Valid*/
+
+
+
+/*Menu Loader(desktop-only)*/
+.rest-menu
+{
+    @include breakpoints(desktop)
+    {
+        opacity: 1;
+        transform: scale(1);
+        animation: reveal 3000ms;
+
+        @keyframes reveal
+        {
+            from
+            {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to
+            {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
     }
 }
