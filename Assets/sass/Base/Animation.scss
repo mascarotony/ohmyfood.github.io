@@ -146,9 +146,6 @@
 
 /**Dish**/
 /*Dish Loader*/
-$menu-appear-delay: 350ms;
-$max-dish: 4;
-
 .dish
 {
     opacity: 0;
@@ -183,8 +180,67 @@ $max-dish: 4;
 }
 
 /*Dish Valid*/
+.dish
+{
+    &__text
+    {
+        transform: scaleX(1);
+        transform-origin: left;
+        @include valid-transition-timing(width);
+    }
 
+    &__price
+    {
+        transform-origin: right;
+        @include valid-transition-timing(transform);
+    }
 
+    .dish-valid
+    {
+        display: flex;
+        background-color: $tertiary-color;
+        width: $valid-transition-width;
+        transform-origin: right;
+        transform: scaleX(0);
+        @include valid-transition-timing(transform);
+
+        .valid-icon
+        {
+            color: $white;
+            font-size: 1.5rem;
+            margin: auto;
+            transform: rotate(0deg);
+            @include valid-transition-timing(transform);
+        }
+    }
+
+    &:hover .dish__text
+    {
+        width: 60%;
+
+        .dish-name, p
+        {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &:hover .dish-valid
+    {
+        transform: scaleX(1);
+    }
+
+    &:hover .valid-icon
+    {
+        transform: rotate(360deg);
+    }
+
+    &:hover .dish__price
+    {
+        transform: translateX(-$valid-transition-width);
+    }
+}
 
 /*Menu Loader(desktop-only)*/
 .rest-menu

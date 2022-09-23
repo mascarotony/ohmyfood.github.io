@@ -76,3 +76,9 @@
     transform: scale(1, 1)
   }
 }
+
+/*animation*/
+@mixin valid-transition-timing($type)
+{
+  transition: $type 300ms 100ms linear;
+}

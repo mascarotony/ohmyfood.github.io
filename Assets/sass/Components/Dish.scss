@@ -8,6 +8,7 @@
   overflow: hidden;
   padding: 0;
   position: relative;
+  opacity: 0;
   @include shadow-box;
   @include breakpoints(tablet)
   {

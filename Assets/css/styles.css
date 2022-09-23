@@ -1,6 +1,7 @@
 /**Utils**/ /*BreakPoints*/
 /*Palette de couleur*/
 /*background*/
+/*animation*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 @keyframes zoom-card {
   0% {
@@ -13,6 +14,7 @@
     transform: scale(1, 1);
   }
 }
+/*animation*/
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -525,6 +527,48 @@ h1, h2, h3 {
 }
 
 /*Dish Valid*/
+.dish__text {
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: width 300ms 100ms linear;
+}
+.dish__price {
+  transform-origin: right;
+  transition: transform 300ms 100ms linear;
+}
+.dish .dish-valid {
+  display: flex;
+  background-color: #99E2D0;
+  width: 70px;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 300ms 100ms linear;
+}
+.dish .dish-valid .valid-icon {
+  color: #FFF;
+  font-size: 1.5rem;
+  margin: auto;
+  transform: rotate(0deg);
+  transition: transform 300ms 100ms linear;
+}
+.dish:hover .dish__text {
+  width: 60%;
+}
+.dish:hover .dish__text .dish-name, .dish:hover .dish__text p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.dish:hover .dish-valid {
+  transform: scaleX(1);
+}
+.dish:hover .valid-icon {
+  transform: rotate(360deg);
+}
+.dish:hover .dish__price {
+  transform: translateX(-70px);
+}
+
 /*Menu Loader(desktop-only)*/
 @media screen and (min-width: 1024px) {
   .rest-menu {
@@ -729,6 +773,7 @@ footer a i {
   overflow: hidden;
   padding: 0;
   position: relative;
+  opacity: 0;
   box-shadow: 0 5px 10px #c2c2c2;
 }
 @media screen and (min-width: 768px) {
